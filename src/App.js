@@ -89,7 +89,7 @@ class App extends Component {
                 <div className="align-center">
                     {this.displayMessages()}
                 </div>
-                <SockJsClient url='http://localhost:8080/websocket-chat/'
+                <SockJsClient url='https://crimsonchat.herokuapp.com/websocket-chat/'
                               topics={['/topic/user']}
                               onConnect={() => {
                               }}
