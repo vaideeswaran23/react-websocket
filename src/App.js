@@ -137,7 +137,7 @@ class App extends Component {
 
         if(iceCandidate) {
             const newIceCandidate = new RTCIceCandidate(iceCandidate);
-            if(iceConnection != peerConnection) {
+            if(iceConnection !== peerConnection) {
                 console.log("coneection success");
                 peerConnection.addIceCandidate(newIceCandidate);
             }
