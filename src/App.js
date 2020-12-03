@@ -35,7 +35,7 @@ class App extends Component {
             typedMessage: "",
             name: "",
             stream: null,
-            isCaller: null,
+            isCaller: null
         }
     }
 
@@ -51,6 +51,7 @@ class App extends Component {
     }
 
     componentDidUpdate() {
+        console.log("component update is called", remoteStream);
         if(remoteStream != null) {
             this.remoteVideoRef.current.srcObject = remoteStream
         }
@@ -123,7 +124,9 @@ class App extends Component {
     }
 
     gotRemoteMediaStream(event) {
+        console.log("got remote media stream", event);
         remoteStream = event.stream;
+        console.log("remoteStream", remoteStream)
     }
 
     registerPeerConnectionListeners() {
