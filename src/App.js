@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import SockJsClient from 'react-stomp';
-import './App.css';
+// import './App.css';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import './css/MessageStyle.css';
@@ -187,14 +187,14 @@ class App extends Component {
         const { isCallReceived, receiverName, isCallAnswered } = this.state;
 
         return (
-            <div>
+            <>
                 <CssBaseline />
                 <NameComponent setName={this.setName}/>
                 <div className="align-center">
                     <h1>Welcome to Crimson Chat</h1>
                     <br/><br/>
                 </div>
-                <div className="align-center">
+                <div className="align-name-center">
                     User : <p className="title1"> {this.state.name}</p>
                 </div>
                 <div className="align-center">
@@ -211,7 +211,7 @@ class App extends Component {
                                     onClick={this.sendMessage}>Send</Button>
                 </div>
                 <div className="align-center">
-                    <video id="selfVideo" autoPlay playsInline ref={this.userVideoRef}/>
+                    <video id="selfVideo" autoPlay playsInline muted ref={this.userVideoRef}/>
                     <video id="RemoteVideo" autoPlay playsInline ref={this.remoteVideoRef}/>
                 </div>
                 <div className="align-center">
@@ -240,7 +240,7 @@ class App extends Component {
                     topics={['/topic/user','/topic/receiveCall', '/topic/answeredCall']}
                     onMessage={(msg) => { this.onMessageReceive(msg) }}
                     ref={(client) => { this.clientRef = client }}/>
-            </div>
+            </>
         )
     }
 }
