@@ -28,6 +28,18 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <div id="agentz-chatbot-9040be9b-0d73-407a-aafa-f0fc0523ba7e"></div>
+    <script>
+    document.addEventListener('readystatechange', function(event){
+        if (event.target.readyState === "complete") {
+            var resource = document.createElement('script');
+            resource.defer = "true";
+            resource.src = "https://dev2-chatbot.agentz.ai/agentz-chatbot.js?version=1&botUrl=https://dev2-chatbot.agentz.ai&title=title&businessAgent=9040be9b-0d73-407a-aafa-f0fc0523ba7e";
+            var script = document.getElementsByTagName('script')[0];
+            script.parentNode.insertBefore(resource, script);
+        }
+    }, false);
+    </script>
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
